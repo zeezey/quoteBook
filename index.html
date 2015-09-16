@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="quoteBook">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/chrome-bootstrap/1.5.0/chrome-bootstrap.min.css" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body ng-controller="mainCtrl">
+      <button ng-click="active = 'add'">Add Quote</button>
+      <button ng-click="active = 'remove'">Remove Quote</button>
+      <button ng-click="active = 'filter'">Filter Quote</button>
+    <input ng-if="active === 'add'" ng-model="newQuote.text">
+    <input ng-if="active === 'add'" ng-model="newQuote.author">
+    <button ng-if="active === 'add'" ng-click="addQuote(newQuote)">add</button>
+    <input ng-if="active === 'remove'" ng-model="text">
+    <button ng-if="active === 'remove'" ng-model="removeQuote(text)">remove</button>
+    <input ng-if="active === 'filterQuotes'" ng-model="quote">
+
+
+   <script src="//cdn.jsdelivr.net/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/ctrl.js"></script>
+    <script src="js/service.js"></script>
+</body>
+</html>
